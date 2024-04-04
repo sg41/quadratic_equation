@@ -38,6 +38,7 @@ clean:
 	@$(CLEAN) $(OBJECTS) *.a *.gcno *.gcda *.gcov *.info
 	@$(CLEAN) $(BUILD_DIR)/$(OBJECTS) $(BUILD_DIR)/*.a $(BUILD_DIR)/$(TEST)
 	@$(CLEAN) $(BUILD_DIR)/report/
+	@$(CLEAN) $(BUILD_DIR)/test
 	@$(CLEAN) $(TEST_DIR)/$(TEST)
 	@$(CLEAN) $(DEBUG_PROG)
 	@$(CLEAN) ./leaks.log
@@ -52,7 +53,6 @@ gcov_report: CFLAGS += --coverage
 gcov_report: CHECK_LIBS += -lgcov
 gcov_report: clean test
 	$(CLEAN) $(OBJ)
-	-$(BUILD_DIR)/$(TEST)
 	gcov *.gcda
 	lcov -t "gcov_report" -o gcov_report.info -c -d .
 	-mkdir $(BUILD_DIR)/report
