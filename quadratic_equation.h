@@ -10,7 +10,7 @@ typedef struct {
 /**
  * Solves a quadratic equation of the form ax^2 + bx + c = 0.
  *
- * @param a The coefficient of the x^2 term.
+ * @param a The coefficient of the x^2 term. Must be non-zero.
  * @param b The coefficient of the x term.
  * @param c The constant term.
  *

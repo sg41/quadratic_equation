@@ -6,6 +6,28 @@
 #include "quadratic_equation.h"
 #define ACCURACY 1e-7
 
+#test edge_case_1
+  double a = 1.0;
+  double b = 2.0;
+  double c = 3.0;
+  
+  EquationResult result = solve_equation(a, b, c);
+  
+  ck_assert_int_eq(result.number_of_roots, 0);
+  ck_assert_double_nan(result.x1);
+  ck_assert_double_nan(result.x2);
+
+#test edge_case_2
+  double a = 1.0;
+  double b = 2.0;
+  double c = 1.0;
+  
+  EquationResult result = solve_equation(a, b, c);
+  
+  ck_assert_int_eq(result.number_of_roots, 1);
+  fail_if(fabs(result.x1 - result.x2) > ACCURACY);
+  fail_if(fabs(result.x1 + 1) > ACCURACY);
+
 #test test_1
     EquationResult solution = solve_equation(-20,-108797540,-130011773690520);
     ck_assert_int_eq(solution.number_of_roots ,2);
