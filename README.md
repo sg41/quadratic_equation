@@ -6,45 +6,45 @@ This is a C library for solving equations of the form ax^2 + bx + c = 0.
 
 * To build the library, run the following command:
 
-```
-make
-```
+  ```
+  make
+  ```
 
-This will create a `libsolve_equation.a` library file in the current directory.
+  This will create a `libsolve_equation.a` library file in the current directory.
 
 * To build the test program, run the following command:
 
-```
-make tests
-```
+  ```
+  make tests
+  ```
 
-This will create a `test` executable in the current directory and run it to test the library.
->note: The test program uses the [check](https://libcheck.github.io/check/) framework for unit testing. You will need to install `check` to run the test program.
+  This will create a `test` executable in the current directory and run it to test the library.
+  >note: The test program uses the [check](https://libcheck.github.io/check/) framework for unit testing. You will need to install `check` to run the test program.
 
 * To check library source code for style errors, and then run the test program, run the following command:
-```
-make check
-```
+  ```
+  make check
+  ```
 
 * To check the library for memory leaks, run the following command:
 
-```
-make leaks
-```
+  ```
+  make leaks
+  ```
 
-This will create a `leaks.log` file in the current directory and run the test program to check for memory leaks.
+  This will create a `leaks.log` file in the current directory and run the test program to check for memory leaks.
 
 * To check unit tests coverage, run the following command:
-```
-make gcov_report
-```
-This will create a `report` directory in the current directory and open a web browser to display the test coverage report.
+  ```
+  make gcov_report
+  ```
+  This will create a `report` directory in the current directory and open a web browser to display the test coverage report.
 
 * To clean up the build directory, run the following command:
 
-```
-make clean
-```
+  ```
+  make clean
+  ```
 
 ## Usage
 
