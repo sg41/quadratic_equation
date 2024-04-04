@@ -30,7 +30,7 @@ $(LIB_FILE_NAME): clean $(SRC_DIR)/$(SOURCES) $(SRC_DIR)/$(HEADERS)
 	ar rc $(LIB_FILE_NAME) $(OBJECTS)
 	$(CLEAN) $(OBJECTS)
 
-all: clean $(LIB_FILE_NAME) check gcov_report
+all: clean $(LIB_FILE_NAME) check
 
 rebuild: clean all
 
