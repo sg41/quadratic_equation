@@ -30,13 +30,13 @@ $(LIB_FILE_NAME): clean $(SRC_DIR)/$(SOURCES) $(SRC_DIR)/$(HEADERS)
 	ar rc $(LIB_FILE_NAME) $(OBJECTS)
 	$(CLEAN) $(OBJECTS)
 
-all: clean $(LIB_FILE_NAME) test gcov_report
+all: clean $(LIB_FILE_NAME) check gcov_report
 
 rebuild: clean all
 
 clean:
 	@$(CLEAN) $(OBJECTS) *.a *.gcno *.gcda *.gcov *.info
-	@$(CLEAN) $(BUILD_DIR)/$(OBJECTS) $(BUILD_DIR)/*.a $(BUILD_DIR)/test
+	@$(CLEAN) $(BUILD_DIR)/$(OBJECTS) $(BUILD_DIR)/*.a $(BUILD_DIR)/$(TEST)
 	@$(CLEAN) $(BUILD_DIR)/report/
 	@$(CLEAN) $(TEST_DIR)/$(TEST)
 	@$(CLEAN) $(DEBUG_PROG)
@@ -48,25 +48,23 @@ test: clean $(LIB_FILE_NAME) testgen
 	$(CC) $(CFLAGS) -g $(TEST_DIR)/$(TEST) $(INCLUDES:%=-I %) -L./ -l$(LIB_NAME) $(CHECK_LIBS) -o $(BUILD_DIR)/$@
 	-$(BUILD_DIR)/$@	
 
-gcov_report: clean testgen
-	$(CC) $(CFLAGS) --coverage -c $(SRC_DIR)/$(SOURCES)
-	ar rc $(LIB_FILE_NAME) $(OBJECTS)
-	cp s21_matrix.a libs21_matrix.a
-	checkmk clean_mode=1 ./tests/includes ./tests/*.check > $(TEST_DIR)/$(TEST)
-	$(CC) $(CFLAGS) $(TEST_DIR)/$(TEST) -L./ -l$(LIB_NAME) $(CHECK_LIBS) -lgcov -o $(BUILD_DIR)/test
+gcov_report: CFLAGS += --coverage
+gcov_report: CHECK_LIBS += -lgcov
+gcov_report: clean test
 	$(CLEAN) $(OBJ)
-	-$(BUILD_DIR)/test
+	-$(BUILD_DIR)/$(TEST)
 	gcov *.gcda
 	lcov -t "gcov_report" -o gcov_report.info -c -d .
 	-mkdir $(BUILD_DIR)/report
 	genhtml -o $(BUILD_DIR)/report gcov_report.info
 	$(CLEAN) $(TEST_DIR)/$(TEST)
+	open $(BUILD_DIR)/report/index.html
 
 testgen: $(TEST_DIR)/*.check
 	$(CLEAN) $(TEST_DIR)/$(TEST)
 	checkmk clean_mode=1 $(TEST_DIR)/*.check > $(TEST_DIR)/$(TEST)
 
-check: cpplint cppcheck 
+check: cpplint cppcheck test
 
 cpplint:
 	clang-format -i -style=google -verbose $(SRC_DIR)/$(SOURCES)
