@@ -19,7 +19,12 @@ make tests
 ```
 
 This will create a `test` executable in the current directory and run it to test the library.
->note: The test program uses the [check](https://libcheck.github.io/check/) framework for unit testing. You will need to install check to run the test program.
+>note: The test program uses the [check](https://libcheck.github.io/check/) framework for unit testing. You will need to install `check` to run the test program.
+
+* To check library source code for style errors, and then run the test program, run the following command:
+```
+make check
+```
 
 * To check the library for memory leaks, run the following command:
 
@@ -29,7 +34,7 @@ make leaks
 
 This will create a `leaks.log` file in the current directory and run the test program to check for memory leaks.
 
-* To check tests coverage, run the following command:
+* To check unit tests coverage, run the following command:
 ```
 make gcov_report
 ```
