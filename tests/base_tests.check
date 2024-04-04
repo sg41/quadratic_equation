@@ -1,6 +1,6 @@
 /* This is the test suite for the quadratic equation solver 
-* using check framework (https://libcheck.github.io/check/)
-*/
+ * using check framework (https://libcheck.github.io/check/)
+ */
 
 #include <check.h>
 #include <math.h>

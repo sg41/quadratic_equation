@@ -10,8 +10,8 @@ else
 	LEAKS				=CK_FORK=no leaks --atExit -- $(BUILD_DIR)/test
 endif
 SOURCES					=*.c
-SRC_DIR					=./
-INCLUDES				=./
+SRC_DIR					=./src
+INCLUDES				=./src
 
 HEADERS					=*.h
 OBJECTS					=*.o
