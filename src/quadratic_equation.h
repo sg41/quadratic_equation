@@ -27,6 +27,7 @@ typedef struct {
  * If the number of roots is 0, the values of x1 and x2 are NAN.
  * If the number of roots is 1, then x1 == x2, and contains the
  * value of the root.
+ * Precision 1e-7
  */
 EquationResult solve_equation(double a, double b, double c);
 #endif
