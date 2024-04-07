@@ -1,6 +1,6 @@
 # Test Suite
 
-This directory contains the test suite for the quadratic equation library. Be sure `check library` is installed before running the tests.
+This directory contains the test suite for the quadratic equation library. Be sure `check library` is installed before running the tests. To install `check library`, follow the instructions [here](https://libcheck.github.io/check/web/install.html).
 
 .check files are used as source to generate the test suite. To generate the test suite, run the following command from the project root directory:
 
