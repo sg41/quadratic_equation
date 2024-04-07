@@ -1,8 +1,11 @@
-/* Header file for the quadratic equation solver. */
+/**
+ * Header file for the quadratic equation solver.
+ */
 #ifndef QUADRATIC_EQUATION_H
 #define QUADRATIC_EQUATION_H
 
-/* Data structure for the result of the quadratic equation solver.
+/**
+ * Data structure for the result of the quadratic equation solver.
  */
 typedef struct {
   int number_of_roots; /* Number of roots found. */

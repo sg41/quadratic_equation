@@ -1,4 +1,5 @@
 # quadratic_equation/Makefile
+#
 # This Makefile is used to compile and test the quadratic_equation project.
 #
 # The main targets are:
