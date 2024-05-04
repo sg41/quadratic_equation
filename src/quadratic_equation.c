@@ -37,8 +37,9 @@ EquationResult solve_equation(double a, double b, double c) {
   double discriminant = b * b - 4. * a * c;
 
   if (discriminant > 0) { /*if discriminant>0 we have two roots*/
-    result.x1 = (-b + square_root(discriminant)) / (2. * a);
-    result.x2 = (-b - square_root(discriminant)) / (2. * a);
+    double discriminant_sqrt = square_root(discriminant);
+    result.x1 = (-b + discriminant_sqrt) / (2. * a);
+    result.x2 = (-b - discriminant_sqrt) / (2. * a);
     result.number_of_roots = 2;
   } else if (discriminant == 0) { /*if discriminant=0 we have one root*/
     result.x1 = result.x2 = -b / (2. * a);
