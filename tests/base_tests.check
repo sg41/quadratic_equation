@@ -6,22 +6,22 @@
  */
 
 #test edge_case_1_safe
-  int a = 0;
-  int b = 2;
-  int c = 3;
+  double a = 0;
+  double b = 2;
+  double c = 3;
   
-  EquationResult result = solve_equation_safe(a, b, c);
+  EquationResult result = solve_equation(a, b, c);
   
   ck_assert_int_eq(result.number_of_roots, 1);
   fail_if(fabs(result.x1 - result.x2) > PRECISION);
   fail_if(fabs(result.x1 + c/b) > PRECISION);
 
 #test edge_case_2_safe
-  int a = 0;
-  int b = 0;
-  int c = 3;
+  double a = 0;
+  double b = 0;
+  double c = 3;
   
-  EquationResult result = solve_equation_safe(a, b, c);
+  EquationResult result = solve_equation(a, b, c);
   
   ck_assert_int_eq(result.number_of_roots, 0);
   ck_assert_double_nan(result.x1);
@@ -34,7 +34,7 @@
   double b = 2.0;
   double c = 1.0;
   
-  EquationResult result = solve_equation_safe(a, b, c);
+  EquationResult result = solve_equation(a, b, c);
   
   ck_assert_int_eq(result.number_of_roots, 1);
   fail_if(fabs(result.x1 - result.x2) > PRECISION);

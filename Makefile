@@ -27,7 +27,7 @@
 # as the .c files. If this is not the case, you will need to change the
 # INCLUDES variable.
 CC						=gcc
-CFLAGS					=-std=c11 -Wall -Werror -Wextra -g
+CFLAGS					=-g -std=c11 -Wall -Werror -Wextra
 CLEAN					=rm -rf
 CHECK_LIBS				=$(shell pkg-config --libs check)
 CFLAGS					+=$(shell pkg-config --cflags check)
@@ -81,7 +81,7 @@ $(TEST_PROG): clean $(LIB_FILE_NAME) testgen
 
 gcov_report: CFLAGS += --coverage
 gcov_report: CHECK_LIBS += -lgcov
-gcov_report: clean $(TEST_PROG)
+gcov_report: clean tests
 	$(CLEAN) $(OBJ)
 	gcov *.gcda
 	lcov -t "gcov_report" -o gcov_report.info -c -d .
@@ -96,7 +96,7 @@ testgen: $(TEST_DIR)/*.check
 	$(CLEAN) $(TEST_DIR)/$(TEST_SOURCE)
 	checkmk clean_mode=1 $(TEST_DIR)/includes.h $(TEST_DIR)/*.check > $(TEST_DIR)/$(TEST_SOURCE)
 
-check: cpplint cppcheck $(TEST_PROG)
+check: cpplint cppcheck tests
 
 cpplint:
 	clang-format -i -style=google -verbose $(SRC_DIR)/$(SOURCES)

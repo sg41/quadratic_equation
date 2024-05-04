@@ -55,7 +55,7 @@ This is a C library for solving equations of the form ax^2 + bx + c = 0.
   make docs
   ```
 
-  This will create a `html` and `latex` directory in the current directory.
+  This will create a `html` and `latex` directory in the `docs` directory.
   You can make this documentation and open html version in a browser by running the following command:
 
   ```

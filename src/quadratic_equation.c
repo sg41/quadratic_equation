@@ -16,19 +16,21 @@
 #include <math.h>
 
 EquationResult solve_equation(double a, double b, double c) {
-  EquationResult result; /* Result of the equation solver. */
+  EquationResult result = {0, NAN, NAN}; /* Result of the equation solver. */
+
+  /* Check if the equation is linear. */
+  if (a == 0) {
+    if (b == 0) return result; /* Nothing to solve*/
+    /* Calculate the linear equation. */
+    result.x1 = result.x2 = -c / b;
+    result.number_of_roots = 1;
+    return result;
+  }
 
   /* Calculate the discriminant. */
   double discriminant = b * b - 4 * a * c;
 
-  /*
-   * Solve the equation based on the discriminant.
-   * we dont check a == 0 because it should be non-zero by the rules of the
-   * quadratic equation
-   */
   if (discriminant > 0) { /*if discriminant>0 we have two roots*/
-    // result.x1 = (-b + sqrt(discriminant)) / (2 * a);
-    // result.x2 = (-b - sqrt(discriminant)) / (2 * a);
     result.x1 = (-b + square_root(discriminant)) / (2 * a);
     result.x2 = (-b - square_root(discriminant)) / (2 * a);
     result.number_of_roots = 2;
@@ -43,23 +45,16 @@ EquationResult solve_equation(double a, double b, double c) {
   return result;
 }
 
-EquationResult solve_equation_safe(int a, int b, int c) {
-  EquationResult result = {0, NAN, NAN};
-  if (a != 0)
-    result = solve_equation((double)a, (double)b, (double)c);
-  else if (b != 0) {
-    result.number_of_roots = 1;
-    result.x1 = result.x2 = -c / b;
-  };
-  return result;
-}
-
+/**
+ * Calculates the square root of the given number using the binary search
+ * algorithm.
+ */
 double square_root(double x) {
   if (x < 0) return NAN;
   long double l = 0;
   long double r = DBL_MAX;
-  long double m;
   while (fabsl(r - l) > PRECISION) {
+    long double m;
     m = (l + r) / 2;
     if (m * m > x)
       r = m;
