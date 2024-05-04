@@ -105,7 +105,7 @@ cppcheck:
 	cppcheck --std=c11 --enable=all --suppress=missingIncludeSystem --suppress=unusedFunction $(SRC_DIR)/$(SOURCES)
 
 leaks: clean $(TEST_PROG)
-	$(LEAKS) > leaks.log
+	$(LEAKS)
 
 valgrind: leaks
 

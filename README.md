@@ -34,7 +34,7 @@ This is a C library for solving equations of the form ax^2 + bx + c = 0.
   make leaks
   ```
 
-  This will create a `leaks.log` file in the current directory and run the test program to check for memory leaks.
+  This  run the test program to check for memory leaks.
 
 * To check unit tests coverage, run the following command:
 
