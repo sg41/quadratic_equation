@@ -1,9 +1,13 @@
 /**
- * Source file for the quadratic equation solver.
- *
- *  This file is part of the quadratic equation solver library.
+ * @file quadratic_equation.c
+ * @author Sergey Gorbatenko (sg41@mail.ru)
+ * @brief This file is part of the quadratic equation solver library.
  *  It contains the implementation of the quadratic equation solver function
  *  solve_equation.
+ * @version 0.1
+ * @date 2024-05-04
+ *
+ * @copyright Copyright (c) 2024
  *
  */
 #include "quadratic_equation.h"
@@ -16,7 +20,7 @@ EquationResult solve_equation(double a, double b, double c) {
   /* Calculate the discriminant. */
   double discriminant = b * b - 4 * a * c;
 
-  /**
+  /*
    * Solve the equation based on the discriminant.
    * we dont check a == 0 because it should be non-zero by the rules of the
    * quadratic equation

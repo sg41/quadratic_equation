@@ -43,6 +43,7 @@ TEST_SOURCE				=solve_equation_test.c
 TEST_DIR				=./tests
 TEST_PROG				=test
 
+DOCS_DIR				=./docs
 BUILD_DIR				=./
 LIB_NAME				=solve_equation
 LIB_FILE_NAME			=lib$(LIB_NAME).a
@@ -69,6 +70,7 @@ clean:
 	@$(CLEAN) $(BUILD_DIR)/report/
 	@$(CLEAN) $(BUILD_DIR)/$(TEST_PROG)
 	@$(CLEAN) $(TEST_DIR)/$(TEST_SOURCE)
+	@$(CLEAN) $(DOCS_DIR)
 	@$(CLEAN) ./leaks.log
 
 tests: $(TEST_PROG)
@@ -86,6 +88,8 @@ gcov_report: clean $(TEST_PROG)
 	-mkdir $(BUILD_DIR)/report
 	genhtml -o $(BUILD_DIR)/report gcov_report.info
 	$(CLEAN) $(TEST_DIR)/$(TEST_SOURCE)
+
+show_coverage: gcov_report
 	open $(BUILD_DIR)/report/index.html
 
 testgen: $(TEST_DIR)/*.check
@@ -104,5 +108,11 @@ leaks: clean $(TEST_PROG)
 	$(LEAKS) > leaks.log
 
 valgrind: leaks
+
+docs: Doxyfile.conf $(SRC_DIR)/$(SOURCES) $(SRC_DIR)/$(HEADERS)
+	doxygen Doxyfile.conf
+
+show_docs: docs README.md
+	open $(DOCS_DIR)/html/index.html
 
 .PHONY: testgen clean
