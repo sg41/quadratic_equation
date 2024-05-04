@@ -21,11 +21,12 @@
  * if it is.
  */
 EquationResult solve_equation(double a, double b, double c) {
-  EquationResult result = {0, NAN, NAN}; /* Result of the equation solver. */
+  EquationResult result = {
+      0, NAN, NAN}; /* Result of the equation solver = no roots by default */
 
   /* Check if the equation is linear. */
   if (a == 0) {
-    if (b == 0) return result; /* Nothing to solve*/
+    if (b == 0) return result; /* Nothing to solve, return default result*/
 
     /* Calculate the linear equation. */
     result.x1 = result.x2 = -c / b;
@@ -44,10 +45,7 @@ EquationResult solve_equation(double a, double b, double c) {
   } else if (discriminant == 0) { /*if discriminant=0 we have one root*/
     result.x1 = result.x2 = -b / (2. * a);
     result.number_of_roots = 1;
-  } else { /*if discriminant<0 we have no roots*/
-    result.x1 = result.x2 = NAN;
-    result.number_of_roots = 0;
-  }
+  } /*if discriminant<0 we have no roots - return default result*/
 
   return result;
 }
