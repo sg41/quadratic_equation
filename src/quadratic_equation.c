@@ -15,12 +15,18 @@
 #include <float.h>
 #include <math.h>
 
+/**
+ * Solves a quadratic equation of the form ax^2 + bx + c = 0 using
+ * discriminant calculation. Also check if the equation is linear and solves it
+ * if it is.
+ */
 EquationResult solve_equation(double a, double b, double c) {
   EquationResult result = {0, NAN, NAN}; /* Result of the equation solver. */
 
   /* Check if the equation is linear. */
   if (a == 0) {
     if (b == 0) return result; /* Nothing to solve*/
+
     /* Calculate the linear equation. */
     result.x1 = result.x2 = -c / b;
     result.number_of_roots = 1;
@@ -28,14 +34,14 @@ EquationResult solve_equation(double a, double b, double c) {
   }
 
   /* Calculate the discriminant. */
-  double discriminant = b * b - 4 * a * c;
+  double discriminant = b * b - 4. * a * c;
 
   if (discriminant > 0) { /*if discriminant>0 we have two roots*/
-    result.x1 = (-b + square_root(discriminant)) / (2 * a);
-    result.x2 = (-b - square_root(discriminant)) / (2 * a);
+    result.x1 = (-b + square_root(discriminant)) / (2. * a);
+    result.x2 = (-b - square_root(discriminant)) / (2. * a);
     result.number_of_roots = 2;
   } else if (discriminant == 0) { /*if discriminant=0 we have one root*/
-    result.x1 = result.x2 = -b / (2 * a);
+    result.x1 = result.x2 = -b / (2. * a);
     result.number_of_roots = 1;
   } else { /*if discriminant<0 we have no roots*/
     result.x1 = result.x2 = NAN;
@@ -53,7 +59,7 @@ double square_root(double x) {
   if (x < 0) return NAN;
   long double l = 0;
   long double r = DBL_MAX;
-  while (fabsl(r - l) > PRECISION) {
+  while ((r - l) > QE_PRECISION) {
     long double m;
     m = (l + r) / 2;
     if (m * m > x)

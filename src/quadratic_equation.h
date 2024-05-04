@@ -11,7 +11,7 @@
 #ifndef QUADRATIC_EQUATION_H
 #define QUADRATIC_EQUATION_H
 
-#define PRECISION 1e-7 /*< Precision for the solver*/
+#define QE_PRECISION 1e-7 /**< Precision for the solver*/
 
 /**
  * @brief The Data structure for the result of the quadratic equation solver.

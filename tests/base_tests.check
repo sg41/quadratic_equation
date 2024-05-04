@@ -13,8 +13,8 @@
   EquationResult result = solve_equation(a, b, c);
   
   ck_assert_int_eq(result.number_of_roots, 1);
-  fail_if(fabs(result.x1 - result.x2) > PRECISION);
-  fail_if(fabs(result.x1 + c/b) > PRECISION);
+  fail_if(fabs(result.x1 - result.x2) > QE_PRECISION);
+  fail_if(fabs(result.x1 + c/b) > QE_PRECISION);
 
 #test edge_case_2_safe
   double a = 0;
@@ -37,8 +37,8 @@
   EquationResult result = solve_equation(a, b, c);
   
   ck_assert_int_eq(result.number_of_roots, 1);
-  fail_if(fabs(result.x1 - result.x2) > PRECISION);
-  fail_if(fabs(result.x1 + 1) > PRECISION);
+  fail_if(fabs(result.x1 - result.x2) > QE_PRECISION);
+  fail_if(fabs(result.x1 + 1) > QE_PRECISION);
 
 #test edge_case_1
   double a = 1.0;
@@ -59,1404 +59,1404 @@
   EquationResult result = solve_equation(a, b, c);
   
   ck_assert_int_eq(result.number_of_roots, 1);
-  fail_if(fabs(result.x1 - result.x2) > PRECISION);
-  fail_if(fabs(result.x1 + 1) > PRECISION);
+  fail_if(fabs(result.x1 - result.x2) > QE_PRECISION);
+  fail_if(fabs(result.x1 + 1) > QE_PRECISION);
 
 #test test_1
     EquationResult solution = solve_equation(-20,-108797540,-130011773690520);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+3667291) > PRECISION); 
- fail_if(fabs(solution.x2+1772586) > PRECISION);
+ fail_if(fabs(solution.x1+3667291) > QE_PRECISION); 
+ fail_if(fabs(solution.x2+1772586) > QE_PRECISION);
 
   
 #test test_2
     EquationResult solution = solve_equation(294,-141195558,-1600964090384736);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+2105744) > PRECISION); 
- fail_if(fabs(solution.x1-2586001) > PRECISION);
+ fail_if(fabs(solution.x2+2105744) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-2586001) > QE_PRECISION);
 
   
 #test test_3
     EquationResult solution = solve_equation(-267,296412186,4722715166392080);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+3687112) > PRECISION); 
- fail_if(fabs(solution.x2-4797270) > PRECISION);
+ fail_if(fabs(solution.x1+3687112) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-4797270) > QE_PRECISION);
 
   
 #test test_4
     EquationResult solution = solve_equation(-417,806708601,3174554007677316);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+1956499) > PRECISION); 
- fail_if(fabs(solution.x2-3891052) > PRECISION);
+ fail_if(fabs(solution.x1+1956499) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-3891052) > QE_PRECISION);
 
   
 #test test_5
     EquationResult solution = solve_equation(-478,3021138772,-4052495536885632);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1-1931872) > PRECISION); 
- fail_if(fabs(solution.x2-4388502) > PRECISION);
+ fail_if(fabs(solution.x1-1931872) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-4388502) > QE_PRECISION);
 
   
 #test test_6
     EquationResult solution = solve_equation(367,1773708798,292266180528840);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+4662180) > PRECISION); 
- fail_if(fabs(solution.x1+170814) > PRECISION);
+ fail_if(fabs(solution.x2+4662180) > QE_PRECISION); 
+ fail_if(fabs(solution.x1+170814) > QE_PRECISION);
 
   
 #test test_7
     EquationResult solution = solve_equation(485,1080338955,514155874862470);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+1538401) > PRECISION); 
- fail_if(fabs(solution.x1+689102) > PRECISION);
+ fail_if(fabs(solution.x2+1538401) > QE_PRECISION); 
+ fail_if(fabs(solution.x1+689102) > QE_PRECISION);
 
   
 #test test_8
     EquationResult solution = solve_equation(431,911452509,267423794912344);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+1762747) > PRECISION); 
- fail_if(fabs(solution.x1+351992) > PRECISION);
+ fail_if(fabs(solution.x2+1762747) > QE_PRECISION); 
+ fail_if(fabs(solution.x1+351992) > QE_PRECISION);
 
   
 #test test_9
     EquationResult solution = solve_equation(-200,-888725200,-104468049705600);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+4322792) > PRECISION); 
- fail_if(fabs(solution.x2+120834) > PRECISION);
+ fail_if(fabs(solution.x1+4322792) > QE_PRECISION); 
+ fail_if(fabs(solution.x2+120834) > QE_PRECISION);
 
   
 #test test_10
     EquationResult solution = solve_equation(142,-1069080086,2011605981501984);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2-3699437) > PRECISION); 
- fail_if(fabs(solution.x1-3829296) > PRECISION);
+ fail_if(fabs(solution.x2-3699437) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-3829296) > QE_PRECISION);
 
   
 #test test_11
     EquationResult solution = solve_equation(-206,-1701578746,-3454735806747668);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+4665502) > PRECISION); 
- fail_if(fabs(solution.x2+3594589) > PRECISION);
+ fail_if(fabs(solution.x1+4665502) > QE_PRECISION); 
+ fail_if(fabs(solution.x2+3594589) > QE_PRECISION);
 
   
 #test test_12
     EquationResult solution = solve_equation(-8,-59910648,-102244152727440);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+4858026) > PRECISION); 
- fail_if(fabs(solution.x2+2630805) > PRECISION);
+ fail_if(fabs(solution.x1+4858026) > QE_PRECISION); 
+ fail_if(fabs(solution.x2+2630805) > QE_PRECISION);
 
   
 #test test_13
     EquationResult solution = solve_equation(-44,51547628,266429578357272);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+1943726) > PRECISION); 
- fail_if(fabs(solution.x2-3115263) > PRECISION);
+ fail_if(fabs(solution.x1+1943726) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-3115263) > QE_PRECISION);
 
   
 #test test_14
     EquationResult solution = solve_equation(198,1310713866,2090008945278936);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+3942124) > PRECISION); 
- fail_if(fabs(solution.x1+2677643) > PRECISION);
+ fail_if(fabs(solution.x2+3942124) > QE_PRECISION); 
+ fail_if(fabs(solution.x1+2677643) > QE_PRECISION);
 
   
 #test test_15
     EquationResult solution = solve_equation(-473,-2571124886,-3420402126706400);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+3112400) > PRECISION); 
- fail_if(fabs(solution.x2+2323382) > PRECISION);
+ fail_if(fabs(solution.x1+3112400) > QE_PRECISION); 
+ fail_if(fabs(solution.x2+2323382) > QE_PRECISION);
 
   
 #test test_16
     EquationResult solution = solve_equation(-29,-60510849,189527331568964);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+3804428) > PRECISION); 
- fail_if(fabs(solution.x2-1717847) > PRECISION);
+ fail_if(fabs(solution.x1+3804428) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-1717847) > QE_PRECISION);
 
   
 #test test_17
     EquationResult solution = solve_equation(428,-1262641516,-2402667529459440);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+1315915) > PRECISION); 
- fail_if(fabs(solution.x1-4266012) > PRECISION);
+ fail_if(fabs(solution.x2+1315915) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-4266012) > QE_PRECISION);
 
   
 #test test_18
     EquationResult solution = solve_equation(-452,-3327703100,-5961384164545512);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+4282338) > PRECISION); 
- fail_if(fabs(solution.x2+3079837) > PRECISION);
+ fail_if(fabs(solution.x1+4282338) > QE_PRECISION); 
+ fail_if(fabs(solution.x2+3079837) > QE_PRECISION);
 
   
 #test test_19
     EquationResult solution = solve_equation(-473,2227662085,-136635191332332);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1-62156) > PRECISION); 
- fail_if(fabs(solution.x2-4647489) > PRECISION);
+ fail_if(fabs(solution.x1-62156) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-4647489) > QE_PRECISION);
 
   
 #test test_20
     EquationResult solution = solve_equation(337,-1347061118,-1287098482464435);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+796695) > PRECISION); 
- fail_if(fabs(solution.x1-4793909) > PRECISION);
+ fail_if(fabs(solution.x2+796695) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-4793909) > QE_PRECISION);
 
   
 #test test_21
     EquationResult solution = solve_equation(148,1215797356,2439974086889496);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+4727598) > PRECISION); 
- fail_if(fabs(solution.x1+3487249) > PRECISION);
+ fail_if(fabs(solution.x2+4727598) > QE_PRECISION); 
+ fail_if(fabs(solution.x1+3487249) > QE_PRECISION);
 
   
 #test test_22
     EquationResult solution = solve_equation(-454,-3721518358,-7549656215739228);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+4509963) > PRECISION); 
- fail_if(fabs(solution.x2+3687214) > PRECISION);
+ fail_if(fabs(solution.x1+4509963) > QE_PRECISION); 
+ fail_if(fabs(solution.x2+3687214) > QE_PRECISION);
 
   
 #test test_23
     EquationResult solution = solve_equation(153,357823395,-133149552904242);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+2665237) > PRECISION); 
- fail_if(fabs(solution.x1-326522) > PRECISION);
+ fail_if(fabs(solution.x2+2665237) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-326522) > QE_PRECISION);
 
   
 #test test_24
     EquationResult solution = solve_equation(-498,-406335630,4591609305841572);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+3471713) > PRECISION); 
- fail_if(fabs(solution.x2-2655778) > PRECISION);
+ fail_if(fabs(solution.x1+3471713) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-2655778) > QE_PRECISION);
 
   
 #test test_25
     EquationResult solution = solve_equation(219,-292471653,-3083732127280242);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+3143667) > PRECISION); 
- fail_if(fabs(solution.x1-4479154) > PRECISION);
+ fail_if(fabs(solution.x2+3143667) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-4479154) > QE_PRECISION);
 
   
 #test test_26
     EquationResult solution = solve_equation(148,-568254436,514394625520056);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2-1461619) > PRECISION); 
- fail_if(fabs(solution.x1-2377938) > PRECISION);
+ fail_if(fabs(solution.x2-1461619) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-2377938) > QE_PRECISION);
 
   
 #test test_27
     EquationResult solution = solve_equation(-429,-289351920,6720397265732436);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+4309518) > PRECISION); 
- fail_if(fabs(solution.x2-3635038) > PRECISION);
+ fail_if(fabs(solution.x1+4309518) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-3635038) > QE_PRECISION);
 
   
 #test test_28
     EquationResult solution = solve_equation(245,1375935925,1818341552728820);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+3488653) > PRECISION); 
- fail_if(fabs(solution.x1+2127412) > PRECISION);
+ fail_if(fabs(solution.x2+3488653) > QE_PRECISION); 
+ fail_if(fabs(solution.x1+2127412) > QE_PRECISION);
 
   
 #test test_29
     EquationResult solution = solve_equation(274,290093390,-3946187251120884);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+4361126) > PRECISION); 
- fail_if(fabs(solution.x1-3302391) > PRECISION);
+ fail_if(fabs(solution.x2+4361126) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-3302391) > QE_PRECISION);
 
   
 #test test_30
     EquationResult solution = solve_equation(329,-715635865,-2509488263828406);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+1880653) > PRECISION); 
- fail_if(fabs(solution.x1-4055838) > PRECISION);
+ fail_if(fabs(solution.x2+1880653) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-4055838) > QE_PRECISION);
 
   
 #test test_31
     EquationResult solution = solve_equation(123,21247020,-2263734541948992);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+4377268) > PRECISION); 
- fail_if(fabs(solution.x1-4204528) > PRECISION);
+ fail_if(fabs(solution.x2+4377268) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-4204528) > QE_PRECISION);
 
   
 #test test_32
     EquationResult solution = solve_equation(497,-2461495876,2975604382840964);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2-2095306) > PRECISION); 
- fail_if(fabs(solution.x1-2857402) > PRECISION);
+ fail_if(fabs(solution.x2-2095306) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-2857402) > QE_PRECISION);
 
   
 #test test_33
     EquationResult solution = solve_equation(-436,3530846592,-7147944567254720);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1-4015460) > PRECISION); 
- fail_if(fabs(solution.x2-4082812) > PRECISION);
+ fail_if(fabs(solution.x1-4015460) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-4082812) > QE_PRECISION);
 
   
 #test test_34
     EquationResult solution = solve_equation(-300,76955700,1235393506869000);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+1905070) > PRECISION); 
- fail_if(fabs(solution.x2-2161589) > PRECISION);
+ fail_if(fabs(solution.x1+1905070) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-2161589) > QE_PRECISION);
 
   
 #test test_35
     EquationResult solution = solve_equation(-57,-155566509,89650574327106);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+3217994) > PRECISION); 
- fail_if(fabs(solution.x2-488757) > PRECISION);
+ fail_if(fabs(solution.x1+3217994) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-488757) > QE_PRECISION);
 
   
 #test test_36
     EquationResult solution = solve_equation(-381,2871374115,-5385906614046864);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1-3516911) > PRECISION); 
- fail_if(fabs(solution.x2-4019504) > PRECISION);
+ fail_if(fabs(solution.x1-3516911) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-4019504) > QE_PRECISION);
 
   
 #test test_37
     EquationResult solution = solve_equation(-154,645219652,-602658645850800);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1-1405588) > PRECISION); 
- fail_if(fabs(solution.x2-2784150) > PRECISION);
+ fail_if(fabs(solution.x1-1405588) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-2784150) > QE_PRECISION);
 
   
 #test test_38
     EquationResult solution = solve_equation(484,-1735749840,-440083768225024);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+237776) > PRECISION); 
- fail_if(fabs(solution.x1-3824036) > PRECISION);
+ fail_if(fabs(solution.x2+237776) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-3824036) > QE_PRECISION);
 
   
 #test test_39
     EquationResult solution = solve_equation(-131,-1006051311,-1770580185043078);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+4948439) > PRECISION); 
- fail_if(fabs(solution.x2+2731342) > PRECISION);
+ fail_if(fabs(solution.x1+4948439) > QE_PRECISION); 
+ fail_if(fabs(solution.x2+2731342) > QE_PRECISION);
 
   
 #test test_40
     EquationResult solution = solve_equation(63,217013076,185403268649088);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+1875616) > PRECISION); 
- fail_if(fabs(solution.x1+1569036) > PRECISION);
+ fail_if(fabs(solution.x2+1875616) > QE_PRECISION); 
+ fail_if(fabs(solution.x1+1569036) > QE_PRECISION);
 
   
 #test test_41
     EquationResult solution = solve_equation(104,-907363600,1969338101694600);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2-4055835) > PRECISION); 
- fail_if(fabs(solution.x1-4668815) > PRECISION);
+ fail_if(fabs(solution.x2-4055835) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-4668815) > QE_PRECISION);
 
   
 #test test_42
     EquationResult solution = solve_equation(236,-1439922376,2081465681789004);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2-2352903) > PRECISION); 
- fail_if(fabs(solution.x1-3748463) > PRECISION);
+ fail_if(fabs(solution.x2-2352903) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-3748463) > QE_PRECISION);
 
   
 #test test_43
     EquationResult solution = solve_equation(291,230249967,-295345785953268);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+1477953) > PRECISION); 
- fail_if(fabs(solution.x1-686716) > PRECISION);
+ fail_if(fabs(solution.x2+1477953) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-686716) > QE_PRECISION);
 
   
 #test test_44
     EquationResult solution = solve_equation(36,-31639860,-112399239902184);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+1381357) > PRECISION); 
- fail_if(fabs(solution.x1-2260242) > PRECISION);
+ fail_if(fabs(solution.x2+1381357) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-2260242) > QE_PRECISION);
 
   
 #test test_45
     EquationResult solution = solve_equation(178,-1296885216,2361820662896696);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2-3594694) > PRECISION); 
- fail_if(fabs(solution.x1-3691178) > PRECISION);
+ fail_if(fabs(solution.x2-3594694) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-3691178) > QE_PRECISION);
 
   
 #test test_46
     EquationResult solution = solve_equation(-114,-251511930,892429663678416);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+4110648) > PRECISION); 
- fail_if(fabs(solution.x2-1904403) > PRECISION);
+ fail_if(fabs(solution.x1+4110648) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-1904403) > QE_PRECISION);
 
   
 #test test_47
     EquationResult solution = solve_equation(-342,940819086,636703315397676);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+561958) > PRECISION); 
- fail_if(fabs(solution.x2-3312891) > PRECISION);
+ fail_if(fabs(solution.x1+561958) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-3312891) > QE_PRECISION);
 
   
 #test test_48
     EquationResult solution = solve_equation(-191,-498676361,12346951780600);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+2635400) > PRECISION); 
- fail_if(fabs(solution.x2-24529) > PRECISION);
+ fail_if(fabs(solution.x1+2635400) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-24529) > QE_PRECISION);
 
   
 #test test_49
     EquationResult solution = solve_equation(-6,-2704356,16947721094640);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+1921066) > PRECISION); 
- fail_if(fabs(solution.x2-1470340) > PRECISION);
+ fail_if(fabs(solution.x1+1921066) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-1470340) > QE_PRECISION);
 
   
 #test test_50
     EquationResult solution = solve_equation(-57,302165322,-240310169901000);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1-974396) > PRECISION); 
- fail_if(fabs(solution.x2-4326750) > PRECISION);
+ fail_if(fabs(solution.x1-974396) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-4326750) > QE_PRECISION);
 
   
 #test test_51
     EquationResult solution = solve_equation(-290,1477509110,-1422200174715000);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1-1288359) > PRECISION); 
- fail_if(fabs(solution.x2-3806500) > PRECISION);
+ fail_if(fabs(solution.x1-1288359) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-3806500) > QE_PRECISION);
 
   
 #test test_52
     EquationResult solution = solve_equation(311,503689691,-2621617409264010);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+3823990) > PRECISION); 
- fail_if(fabs(solution.x1-2204409) > PRECISION);
+ fail_if(fabs(solution.x2+3823990) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-2204409) > QE_PRECISION);
 
   
 #test test_53
     EquationResult solution = solve_equation(289,755749450,460512878992725);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+1648335) > PRECISION); 
- fail_if(fabs(solution.x1+966715) > PRECISION);
+ fail_if(fabs(solution.x2+1648335) > QE_PRECISION); 
+ fail_if(fabs(solution.x1+966715) > QE_PRECISION);
 
   
 #test test_54
     EquationResult solution = solve_equation(385,1014367970,-2416079700509475);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+4147727) > PRECISION); 
- fail_if(fabs(solution.x1-1513005) > PRECISION);
+ fail_if(fabs(solution.x2+4147727) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-1513005) > QE_PRECISION);
 
   
 #test test_55
     EquationResult solution = solve_equation(403,2702475282,4478876195016600);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+3711300) > PRECISION); 
- fail_if(fabs(solution.x1+2994594) > PRECISION);
+ fail_if(fabs(solution.x2+3711300) > QE_PRECISION); 
+ fail_if(fabs(solution.x1+2994594) > QE_PRECISION);
 
   
 #test test_56
     EquationResult solution = solve_equation(-164,1024241664,-1587715150011580);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1-2858131) > PRECISION); 
- fail_if(fabs(solution.x2-3387245) > PRECISION);
+ fail_if(fabs(solution.x1-2858131) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-3387245) > QE_PRECISION);
 
   
 #test test_57
     EquationResult solution = solve_equation(-141,1092146661,-2055620530029864);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1-3224648) > PRECISION); 
- fail_if(fabs(solution.x2-4521073) > PRECISION);
+ fail_if(fabs(solution.x1-3224648) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-4521073) > QE_PRECISION);
 
   
 #test test_58
     EquationResult solution = solve_equation(-240,-2196362400,-5014768722771840);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+4782308) > PRECISION); 
- fail_if(fabs(solution.x2+4369202) > PRECISION);
+ fail_if(fabs(solution.x1+4782308) > QE_PRECISION); 
+ fail_if(fabs(solution.x2+4369202) > QE_PRECISION);
 
   
 #test test_59
     EquationResult solution = solve_equation(-132,-656872656,-796671131945040);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+2882518) > PRECISION); 
- fail_if(fabs(solution.x2+2093790) > PRECISION);
+ fail_if(fabs(solution.x1+2882518) > QE_PRECISION); 
+ fail_if(fabs(solution.x2+2093790) > QE_PRECISION);
 
   
 #test test_60
     EquationResult solution = solve_equation(-375,1758412125,-1086042255243750);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1-731850) > PRECISION); 
- fail_if(fabs(solution.x2-3957249) > PRECISION);
+ fail_if(fabs(solution.x1-731850) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-3957249) > QE_PRECISION);
 
   
 #test test_61
     EquationResult solution = solve_equation(-401,-325972098,886685129745408);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+1948002) > PRECISION); 
- fail_if(fabs(solution.x2-1135104) > PRECISION);
+ fail_if(fabs(solution.x1+1948002) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-1135104) > QE_PRECISION);
 
   
 #test test_62
     EquationResult solution = solve_equation(30,63436590,-56700499682640);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+2791592) > PRECISION); 
- fail_if(fabs(solution.x1-677039) > PRECISION);
+ fail_if(fabs(solution.x2+2791592) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-677039) > QE_PRECISION);
 
   
 #test test_63
     EquationResult solution = solve_equation(243,1238570028,301955199309504);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+4840272) > PRECISION); 
- fail_if(fabs(solution.x1+256724) > PRECISION);
+ fail_if(fabs(solution.x2+4840272) > QE_PRECISION); 
+ fail_if(fabs(solution.x1+256724) > QE_PRECISION);
 
   
 #test test_64
     EquationResult solution = solve_equation(-19,-74826066,547242791800);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+3945514) > PRECISION); 
- fail_if(fabs(solution.x2-7300) > PRECISION);
+ fail_if(fabs(solution.x1+3945514) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-7300) > QE_PRECISION);
 
   
 #test test_65
     EquationResult solution = solve_equation(121,-324992690,-993390335560491);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+1821441) > PRECISION); 
- fail_if(fabs(solution.x1-4507331) > PRECISION);
+ fail_if(fabs(solution.x2+1821441) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-4507331) > QE_PRECISION);
 
   
 #test test_66
     EquationResult solution = solve_equation(185,536527750,-638327174869360);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+3806584) > PRECISION); 
- fail_if(fabs(solution.x1-906434) > PRECISION);
+ fail_if(fabs(solution.x2+3806584) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-906434) > QE_PRECISION);
 
   
 #test test_67
     EquationResult solution = solve_equation(186,-491700486,-1692138575652840);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+1971340) > PRECISION); 
- fail_if(fabs(solution.x1-4614891) > PRECISION);
+ fail_if(fabs(solution.x2+1971340) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-4614891) > QE_PRECISION);
 
   
 #test test_68
     EquationResult solution = solve_equation(-376,1089866832,2634059512823848);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+1568311) > PRECISION); 
- fail_if(fabs(solution.x2-4466893) > PRECISION);
+ fail_if(fabs(solution.x1+1568311) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-4466893) > QE_PRECISION);
 
   
 #test test_69
     EquationResult solution = solve_equation(145,-707447025,13566729261020);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2-19253) > PRECISION); 
- fail_if(fabs(solution.x1-4859692) > PRECISION);
+ fail_if(fabs(solution.x2-19253) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-4859692) > QE_PRECISION);
 
   
 #test test_70
     EquationResult solution = solve_equation(-440,-1441291720,985050474216160);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+3856219) > PRECISION); 
- fail_if(fabs(solution.x2-580556) > PRECISION);
+ fail_if(fabs(solution.x1+3856219) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-580556) > QE_PRECISION);
 
   
 #test test_71
     EquationResult solution = solve_equation(-322,-673406650,2890182335559288);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+4218852) > PRECISION); 
- fail_if(fabs(solution.x2-2127527) > PRECISION);
+ fail_if(fabs(solution.x1+4218852) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-2127527) > QE_PRECISION);
 
   
 #test test_72
     EquationResult solution = solve_equation(199,-500338934,-2264662631212800);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+2342950) > PRECISION); 
- fail_if(fabs(solution.x1-4857216) > PRECISION);
+ fail_if(fabs(solution.x2+2342950) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-4857216) > QE_PRECISION);
 
   
 #test test_73
     EquationResult solution = solve_equation(-52,259005188,-55054093464760);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1-222499) > PRECISION); 
- fail_if(fabs(solution.x2-4758370) > PRECISION);
+ fail_if(fabs(solution.x1-222499) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-4758370) > QE_PRECISION);
 
   
 #test test_74
     EquationResult solution = solve_equation(-65,360530300,-496734807600915);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1-2551557) > PRECISION); 
- fail_if(fabs(solution.x2-2995063) > PRECISION);
+ fail_if(fabs(solution.x1-2551557) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-2995063) > QE_PRECISION);
 
   
 #test test_75
     EquationResult solution = solve_equation(-34,20206302,181841397158340);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+2034495) > PRECISION); 
- fail_if(fabs(solution.x2-2628798) > PRECISION);
+ fail_if(fabs(solution.x1+2034495) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-2628798) > QE_PRECISION);
 
   
 #test test_76
     EquationResult solution = solve_equation(93,-210051474,-1107442121769675);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+2501575) > PRECISION); 
- fail_if(fabs(solution.x1-4760193) > PRECISION);
+ fail_if(fabs(solution.x2+2501575) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-4760193) > QE_PRECISION);
 
   
 #test test_77
     EquationResult solution = solve_equation(-442,-62980138,874553957560920);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+1479685) > PRECISION); 
- fail_if(fabs(solution.x2-1337196) > PRECISION);
+ fail_if(fabs(solution.x1+1479685) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-1337196) > QE_PRECISION);
 
   
 #test test_78
     EquationResult solution = solve_equation(-483,-464527665,1259420029877142);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+2165733) > PRECISION); 
- fail_if(fabs(solution.x2-1203978) > PRECISION);
+ fail_if(fabs(solution.x1+2165733) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-1203978) > QE_PRECISION);
 
   
 #test test_79
     EquationResult solution = solve_equation(-173,1201588454,-1782914317044765);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1-2148235) > PRECISION); 
- fail_if(fabs(solution.x2-4797363) > PRECISION);
+ fail_if(fabs(solution.x1-2148235) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-4797363) > QE_PRECISION);
 
   
 #test test_80
     EquationResult solution = solve_equation(211,1414155338,2166950296356855);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+4330785) > PRECISION); 
- fail_if(fabs(solution.x1+2371373) > PRECISION);
+ fail_if(fabs(solution.x2+4330785) > QE_PRECISION); 
+ fail_if(fabs(solution.x1+2371373) > QE_PRECISION);
 
   
 #test test_81
     EquationResult solution = solve_equation(87,734366739,1513662380294274);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+4864074) > PRECISION); 
- fail_if(fabs(solution.x1+3576923) > PRECISION);
+ fail_if(fabs(solution.x2+4864074) > QE_PRECISION); 
+ fail_if(fabs(solution.x1+3576923) > QE_PRECISION);
 
   
 #test test_82
     EquationResult solution = solve_equation(-74,586722320,-1091391697000374);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1-2980747) > PRECISION); 
- fail_if(fabs(solution.x2-4947933) > PRECISION);
+ fail_if(fabs(solution.x1-2980747) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-4947933) > QE_PRECISION);
 
   
 #test test_83
     EquationResult solution = solve_equation(-324,580935888,1070053657117236);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+1129909) > PRECISION); 
- fail_if(fabs(solution.x2-2922921) > PRECISION);
+ fail_if(fabs(solution.x1+1129909) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-2922921) > QE_PRECISION);
 
   
 #test test_84
     EquationResult solution = solve_equation(218,524536558,-856143092022180);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+3521390) > PRECISION); 
- fail_if(fabs(solution.x1-1115259) > PRECISION);
+ fail_if(fabs(solution.x2+3521390) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-1115259) > QE_PRECISION);
 
   
 #test test_85
     EquationResult solution = solve_equation(-198,204643494,3075587247239892);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+3458186) > PRECISION); 
- fail_if(fabs(solution.x2-4491739) > PRECISION);
+ fail_if(fabs(solution.x1+3458186) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-4491739) > QE_PRECISION);
 
   
 #test test_86
     EquationResult solution = solve_equation(99,-218331630,-472841602833600);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+1345190) > PRECISION); 
- fail_if(fabs(solution.x1-3550560) > PRECISION);
+ fail_if(fabs(solution.x2+1345190) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-3550560) > QE_PRECISION);
 
   
 #test test_87
     EquationResult solution = solve_equation(275,-2331242925,4840527412195750);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2-3635290) > PRECISION); 
- fail_if(fabs(solution.x1-4841957) > PRECISION);
+ fail_if(fabs(solution.x2-3635290) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-4841957) > QE_PRECISION);
 
   
 #test test_88
     EquationResult solution = solve_equation(54,116755992,-453692901615822);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+4174687) > PRECISION); 
- fail_if(fabs(solution.x1-2012539) > PRECISION);
+ fail_if(fabs(solution.x2+4174687) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-2012539) > QE_PRECISION);
 
   
 #test test_89
     EquationResult solution = solve_equation(460,-664263000,30880589544000);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2-48090) > PRECISION); 
- fail_if(fabs(solution.x1-1395960) > PRECISION);
+ fail_if(fabs(solution.x2-48090) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-1395960) > QE_PRECISION);
 
   
 #test test_90
     EquationResult solution = solve_equation(93,627150615,931480364461548);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+4534948) > PRECISION); 
- fail_if(fabs(solution.x1+2208607) > PRECISION);
+ fail_if(fabs(solution.x2+4534948) > QE_PRECISION); 
+ fail_if(fabs(solution.x1+2208607) > QE_PRECISION);
 
   
 #test test_91
     EquationResult solution = solve_equation(-78,11926044,556462530926250);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+2595625) > PRECISION); 
- fail_if(fabs(solution.x2-2748523) > PRECISION);
+ fail_if(fabs(solution.x1+2595625) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-2748523) > QE_PRECISION);
 
   
 #test test_92
     EquationResult solution = solve_equation(-309,998149722,710515901594520);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+600282) > PRECISION); 
- fail_if(fabs(solution.x2-3830540) > PRECISION);
+ fail_if(fabs(solution.x1+600282) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-3830540) > QE_PRECISION);
 
   
 #test test_93
     EquationResult solution = solve_equation(-156,139999704,413402009641920);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+1239880) > PRECISION); 
- fail_if(fabs(solution.x2-2137314) > PRECISION);
+ fail_if(fabs(solution.x1+1239880) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-2137314) > QE_PRECISION);
 
   
 #test test_94
     EquationResult solution = solve_equation(-472,-793957808,1212416810326440);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+2651045) > PRECISION); 
- fail_if(fabs(solution.x2-968931) > PRECISION);
+ fail_if(fabs(solution.x1+2651045) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-968931) > QE_PRECISION);
 
   
 #test test_95
     EquationResult solution = solve_equation(-201,988432776,-146544471101655);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1-153021) > PRECISION); 
- fail_if(fabs(solution.x2-4764555) > PRECISION);
+ fail_if(fabs(solution.x1-153021) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-4764555) > QE_PRECISION);
 
   
 #test test_96
     EquationResult solution = solve_equation(-230,667739910,48119401665500);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+70358) > PRECISION); 
- fail_if(fabs(solution.x2-2973575) > PRECISION);
+ fail_if(fabs(solution.x1+70358) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-2973575) > QE_PRECISION);
 
   
 #test test_97
     EquationResult solution = solve_equation(292,-92936884,-699430954372776);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+1396701) > PRECISION); 
- fail_if(fabs(solution.x1-1714978) > PRECISION);
+ fail_if(fabs(solution.x2+1396701) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-1714978) > QE_PRECISION);
 
   
 #test test_98
     EquationResult solution = solve_equation(383,-141629187,-1790457858001160);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+1985131) > PRECISION); 
- fail_if(fabs(solution.x1-2354920) > PRECISION);
+ fail_if(fabs(solution.x2+1985131) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-2354920) > QE_PRECISION);
 
   
 #test test_99
     EquationResult solution = solve_equation(423,108469467,4581056865564);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+203108) > PRECISION); 
- fail_if(fabs(solution.x1+53321) > PRECISION);
+ fail_if(fabs(solution.x2+203108) > QE_PRECISION); 
+ fail_if(fabs(solution.x1+53321) > QE_PRECISION);
 
   
 #test test_100
     EquationResult solution = solve_equation(-420,686698740,-236193821481240);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1-492018) > PRECISION); 
- fail_if(fabs(solution.x2-1142979) > PRECISION);
+ fail_if(fabs(solution.x1-492018) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-1142979) > QE_PRECISION);
 
   
 #test test_101
     EquationResult solution = solve_equation(423,2294164188,2945229426427680);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+3337096) > PRECISION); 
- fail_if(fabs(solution.x1+2086460) > PRECISION);
+ fail_if(fabs(solution.x2+3337096) > QE_PRECISION); 
+ fail_if(fabs(solution.x1+2086460) > QE_PRECISION);
 
   
 #test test_102
     EquationResult solution = solve_equation(426,-805519140,-4801499990899200);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+2542390) > PRECISION); 
- fail_if(fabs(solution.x1-4433280) > PRECISION);
+ fail_if(fabs(solution.x2+2542390) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-4433280) > QE_PRECISION);
 
   
 #test test_103
     EquationResult solution = solve_equation(-340,-2201893380,-3485120187960680);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+3722639) > PRECISION); 
- fail_if(fabs(solution.x2+2753518) > PRECISION);
+ fail_if(fabs(solution.x1+3722639) > QE_PRECISION); 
+ fail_if(fabs(solution.x2+2753518) > QE_PRECISION);
 
   
 #test test_104
     EquationResult solution = solve_equation(22,-33921800,-87977391531678);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+1372257) > PRECISION); 
- fail_if(fabs(solution.x1-2914157) > PRECISION);
+ fail_if(fabs(solution.x2+1372257) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-2914157) > QE_PRECISION);
 
   
 #test test_105
     EquationResult solution = solve_equation(-285,403917105,3296115925146000);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+2765200) > PRECISION); 
- fail_if(fabs(solution.x2-4182453) > PRECISION);
+ fail_if(fabs(solution.x1+2765200) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-4182453) > QE_PRECISION);
 
   
 #test test_106
     EquationResult solution = solve_equation(309,-1045260480,567471620472204);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2-679322) > PRECISION); 
- fail_if(fabs(solution.x1-2703398) > PRECISION);
+ fail_if(fabs(solution.x2-679322) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-2703398) > QE_PRECISION);
 
   
 #test test_107
     EquationResult solution = solve_equation(249,-1589145390,2535483316528200);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2-3178090) > PRECISION); 
- fail_if(fabs(solution.x1-3204020) > PRECISION);
+ fail_if(fabs(solution.x2-3178090) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-3204020) > QE_PRECISION);
 
   
 #test test_108
     EquationResult solution = solve_equation(-53,70718324,-23261473790276);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1-588422) > PRECISION); 
- fail_if(fabs(solution.x2-745886) > PRECISION);
+ fail_if(fabs(solution.x1-588422) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-745886) > QE_PRECISION);
 
   
 #test test_109
     EquationResult solution = solve_equation(274,-2053427788,3717197925891450);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2-3058237) > PRECISION); 
- fail_if(fabs(solution.x1-4436025) > PRECISION);
+ fail_if(fabs(solution.x2-3058237) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-4436025) > QE_PRECISION);
 
   
 #test test_110
     EquationResult solution = solve_equation(-22,96973294,17139122136576);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+170171) > PRECISION); 
- fail_if(fabs(solution.x2-4578048) > PRECISION);
+ fail_if(fabs(solution.x1+170171) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-4578048) > QE_PRECISION);
 
   
 #test test_111
     EquationResult solution = solve_equation(84,323512140,213336456311664);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+3006628) > PRECISION); 
- fail_if(fabs(solution.x1+844707) > PRECISION);
+ fail_if(fabs(solution.x2+3006628) > QE_PRECISION); 
+ fail_if(fabs(solution.x1+844707) > QE_PRECISION);
 
   
 #test test_112
     EquationResult solution = solve_equation(469,361590089,55480880166502);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+559579) > PRECISION); 
- fail_if(fabs(solution.x1+211402) > PRECISION);
+ fail_if(fabs(solution.x2+559579) > QE_PRECISION); 
+ fail_if(fabs(solution.x1+211402) > QE_PRECISION);
 
   
 #test test_113
     EquationResult solution = solve_equation(15,-3536985,-34261174324080);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+1398009) > PRECISION); 
- fail_if(fabs(solution.x1-1633808) > PRECISION);
+ fail_if(fabs(solution.x2+1398009) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-1633808) > QE_PRECISION);
 
   
 #test test_114
     EquationResult solution = solve_equation(395,2200728675,3064780686922870);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+2822707) > PRECISION); 
- fail_if(fabs(solution.x1+2748758) > PRECISION);
+ fail_if(fabs(solution.x2+2822707) > QE_PRECISION); 
+ fail_if(fabs(solution.x1+2748758) > QE_PRECISION);
 
   
 #test test_115
     EquationResult solution = solve_equation(-315,-1272963510,-745076991937320);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+3331076) > PRECISION); 
- fail_if(fabs(solution.x2+710078) > PRECISION);
+ fail_if(fabs(solution.x1+3331076) > QE_PRECISION); 
+ fail_if(fabs(solution.x2+710078) > QE_PRECISION);
 
   
 #test test_116
     EquationResult solution = solve_equation(119,-792666854,1154494628368095);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2-2151205) > PRECISION); 
- fail_if(fabs(solution.x1-4509861) > PRECISION);
+ fail_if(fabs(solution.x2-2151205) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-4509861) > QE_PRECISION);
 
   
 #test test_117
     EquationResult solution = solve_equation(127,-1221793467,2936946332195156);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2-4698124) > PRECISION); 
- fail_if(fabs(solution.x1-4922297) > PRECISION);
+ fail_if(fabs(solution.x2-4698124) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-4922297) > QE_PRECISION);
 
   
 #test test_118
     EquationResult solution = solve_equation(-396,-569529576,346226478225012);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+1898687) > PRECISION); 
- fail_if(fabs(solution.x2-460481) > PRECISION);
+ fail_if(fabs(solution.x1+1898687) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-460481) > QE_PRECISION);
 
   
 #test test_119
     EquationResult solution = solve_equation(87,-265240206,-132731802332016);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+437608) > PRECISION); 
- fail_if(fabs(solution.x1-3486346) > PRECISION);
+ fail_if(fabs(solution.x2+437608) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-3486346) > QE_PRECISION);
 
   
 #test test_120
     EquationResult solution = solve_equation(176,-23434752,-334782052532928);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+1314222) > PRECISION); 
- fail_if(fabs(solution.x1-1447374) > PRECISION);
+ fail_if(fabs(solution.x2+1314222) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-1447374) > QE_PRECISION);
 
   
 #test test_121
     EquationResult solution = solve_equation(-333,133632567,1853276542210116);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+2166977) > PRECISION); 
- fail_if(fabs(solution.x2-2568276) > PRECISION);
+ fail_if(fabs(solution.x1+2166977) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-2568276) > QE_PRECISION);
 
   
 #test test_122
     EquationResult solution = solve_equation(451,-2128778179,731075580290154);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2-372882) > PRECISION); 
- fail_if(fabs(solution.x1-4347247) > PRECISION);
+ fail_if(fabs(solution.x2-372882) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-4347247) > QE_PRECISION);
 
   
 #test test_123
     EquationResult solution = solve_equation(-309,2386670268,-4608313561362735);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1-3833007) > PRECISION); 
- fail_if(fabs(solution.x2-3890845) > PRECISION);
+ fail_if(fabs(solution.x1-3833007) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-3890845) > QE_PRECISION);
 
   
 #test test_124
     EquationResult solution = solve_equation(409,790477981,-729821764894260);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+2615065) > PRECISION); 
- fail_if(fabs(solution.x1-682356) > PRECISION);
+ fail_if(fabs(solution.x2+2615065) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-682356) > QE_PRECISION);
 
   
 #test test_125
     EquationResult solution = solve_equation(192,1109023872,1481163124164096);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+3679684) > PRECISION); 
- fail_if(fabs(solution.x1+2096482) > PRECISION);
+ fail_if(fabs(solution.x2+3679684) > QE_PRECISION); 
+ fail_if(fabs(solution.x1+2096482) > QE_PRECISION);
 
   
 #test test_126
     EquationResult solution = solve_equation(-429,3594452862,-7359554681898705);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1-3560513) > PRECISION); 
- fail_if(fabs(solution.x2-4818165) > PRECISION);
+ fail_if(fabs(solution.x1-3560513) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-4818165) > QE_PRECISION);
 
   
 #test test_127
     EquationResult solution = solve_equation(-497,-353587171,8284951553019330);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+4454070) > PRECISION); 
- fail_if(fabs(solution.x2-3742627) > PRECISION);
+ fail_if(fabs(solution.x1+4454070) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-3742627) > QE_PRECISION);
 
   
 #test test_128
     EquationResult solution = solve_equation(364,277280640,-965163405417484);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+2053189) > PRECISION); 
- fail_if(fabs(solution.x1-1291429) > PRECISION);
+ fail_if(fabs(solution.x2+2053189) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-1291429) > QE_PRECISION);
 
   
 #test test_129
     EquationResult solution = solve_equation(498,2065269246,2086113675990756);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+2406253) > PRECISION); 
- fail_if(fabs(solution.x1+1740874) > PRECISION);
+ fail_if(fabs(solution.x2+2406253) > QE_PRECISION); 
+ fail_if(fabs(solution.x1+1740874) > QE_PRECISION);
 
   
 #test test_130
     EquationResult solution = solve_equation(-174,-725626110,70026168794604);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+4264634) > PRECISION); 
- fail_if(fabs(solution.x2-94369) > PRECISION);
+ fail_if(fabs(solution.x1+4264634) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-94369) > QE_PRECISION);
 
   
 #test test_131
     EquationResult solution = solve_equation(154,499478826,123024946035992);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+2974828) > PRECISION); 
- fail_if(fabs(solution.x1+268541) > PRECISION);
+ fail_if(fabs(solution.x2+2974828) > QE_PRECISION); 
+ fail_if(fabs(solution.x1+268541) > QE_PRECISION);
 
   
 #test test_132
     EquationResult solution = solve_equation(203,791289940,-532663340884983);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+4483259) > PRECISION); 
- fail_if(fabs(solution.x1-585279) > PRECISION);
+ fail_if(fabs(solution.x2+4483259) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-585279) > QE_PRECISION);
 
   
 #test test_133
     EquationResult solution = solve_equation(-420,-1035973680,2897564269120500);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+4135025) > PRECISION); 
- fail_if(fabs(solution.x2-1668421) > PRECISION);
+ fail_if(fabs(solution.x1+4135025) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-1668421) > QE_PRECISION);
 
   
 #test test_134
     EquationResult solution = solve_equation(161,415719710,-1425721883742975);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+4534855) > PRECISION); 
- fail_if(fabs(solution.x1-1952745) > PRECISION);
+ fail_if(fabs(solution.x2+4534855) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-1952745) > QE_PRECISION);
 
   
 #test test_135
     EquationResult solution = solve_equation(29,-125745537,-17206710154100);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+132772) > PRECISION); 
- fail_if(fabs(solution.x1-4468825) > PRECISION);
+ fail_if(fabs(solution.x2+132772) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-4468825) > QE_PRECISION);
 
   
 #test test_136
     EquationResult solution = solve_equation(-295,-2028250080,-3417718882128260);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+3919766) > PRECISION); 
- fail_if(fabs(solution.x2+2955658) > PRECISION);
+ fail_if(fabs(solution.x1+3919766) > QE_PRECISION); 
+ fail_if(fabs(solution.x2+2955658) > QE_PRECISION);
 
   
 #test test_137
     EquationResult solution = solve_equation(423,975624966,-166252361598369);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+2465833) > PRECISION); 
- fail_if(fabs(solution.x1-159391) > PRECISION);
+ fail_if(fabs(solution.x2+2465833) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-159391) > QE_PRECISION);
 
   
 #test test_138
     EquationResult solution = solve_equation(-111,391717779,-94067064641910);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1-259174) > PRECISION); 
- fail_if(fabs(solution.x2-3269815) > PRECISION);
+ fail_if(fabs(solution.x1-259174) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-3269815) > QE_PRECISION);
 
   
 #test test_139
     EquationResult solution = solve_equation(-476,-2140714324,-2405178343313480);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+2308054) > PRECISION); 
- fail_if(fabs(solution.x2+2189245) > PRECISION);
+ fail_if(fabs(solution.x1+2308054) > QE_PRECISION); 
+ fail_if(fabs(solution.x2+2189245) > QE_PRECISION);
 
   
 #test test_140
     EquationResult solution = solve_equation(385,-1016269100,267401923798240);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2-296404) > PRECISION); 
- fail_if(fabs(solution.x1-2343256) > PRECISION);
+ fail_if(fabs(solution.x2-296404) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-2343256) > QE_PRECISION);
 
   
 #test test_141
     EquationResult solution = solve_equation(492,-2556253404,1965826305674184);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2-938578) > PRECISION); 
- fail_if(fabs(solution.x1-4257059) > PRECISION);
+ fail_if(fabs(solution.x2-938578) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-4257059) > QE_PRECISION);
 
   
 #test test_142
     EquationResult solution = solve_equation(-270,-1310224410,-1243725726524400);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+3558040) > PRECISION); 
- fail_if(fabs(solution.x2+1294643) > PRECISION);
+ fail_if(fabs(solution.x1+3558040) > QE_PRECISION); 
+ fail_if(fabs(solution.x2+1294643) > QE_PRECISION);
 
   
 #test test_143
     EquationResult solution = solve_equation(91,449417150,518027799265704);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+3105684) > PRECISION); 
- fail_if(fabs(solution.x1+1832966) > PRECISION);
+ fail_if(fabs(solution.x2+3105684) > QE_PRECISION); 
+ fail_if(fabs(solution.x1+1832966) > QE_PRECISION);
 
   
 #test test_144
     EquationResult solution = solve_equation(-345,847238925,2004001263594270);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+1477001) > PRECISION); 
- fail_if(fabs(solution.x2-3932766) > PRECISION);
+ fail_if(fabs(solution.x1+1477001) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-3932766) > QE_PRECISION);
 
   
 #test test_145
     EquationResult solution = solve_equation(11,-3157341,-157818102600510);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+3646959) > PRECISION); 
- fail_if(fabs(solution.x1-3933990) > PRECISION);
+ fail_if(fabs(solution.x2+3646959) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-3933990) > QE_PRECISION);
 
   
 #test test_146
     EquationResult solution = solve_equation(-191,-1565910635,-3121319959906844);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+4778801) > PRECISION); 
- fail_if(fabs(solution.x2+3419684) > PRECISION);
+ fail_if(fabs(solution.x1+4778801) > QE_PRECISION); 
+ fail_if(fabs(solution.x2+3419684) > QE_PRECISION);
 
   
 #test test_147
     EquationResult solution = solve_equation(243,1076720607,1097493853228542);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+2841487) > PRECISION); 
- fail_if(fabs(solution.x1+1589462) > PRECISION);
+ fail_if(fabs(solution.x2+2841487) > QE_PRECISION); 
+ fail_if(fabs(solution.x1+1589462) > QE_PRECISION);
 
   
 #test test_148
     EquationResult solution = solve_equation(-489,-1999623201,1166458895779254);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+4606987) > PRECISION); 
- fail_if(fabs(solution.x2-517778) > PRECISION);
+ fail_if(fabs(solution.x1+4606987) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-517778) > QE_PRECISION);
 
   
 #test test_149
     EquationResult solution = solve_equation(320,1590515200,481652997529280);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+4646419) > PRECISION); 
- fail_if(fabs(solution.x1+323941) > PRECISION);
+ fail_if(fabs(solution.x2+4646419) > QE_PRECISION); 
+ fail_if(fabs(solution.x1+323941) > QE_PRECISION);
 
   
 #test test_150
     EquationResult solution = solve_equation(212,-883388100,905051914883872);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2-1815688) > PRECISION); 
- fail_if(fabs(solution.x1-2351237) > PRECISION);
+ fail_if(fabs(solution.x2-1815688) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-2351237) > QE_PRECISION);
 
   
 #test test_151
     EquationResult solution = solve_equation(-465,-1338465765,-885736755624750);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+1847275) > PRECISION); 
- fail_if(fabs(solution.x2+1031146) > PRECISION);
+ fail_if(fabs(solution.x1+1847275) > QE_PRECISION); 
+ fail_if(fabs(solution.x2+1031146) > QE_PRECISION);
 
   
 #test test_152
     EquationResult solution = solve_equation(-408,3618895536,-8023483803153336);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1-4379039) > PRECISION); 
- fail_if(fabs(solution.x2-4490803) > PRECISION);
+ fail_if(fabs(solution.x1-4379039) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-4490803) > QE_PRECISION);
 
   
 #test test_153
     EquationResult solution = solve_equation(-375,1510051125,447292882417500);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+277137) > PRECISION); 
- fail_if(fabs(solution.x2-4303940) > PRECISION);
+ fail_if(fabs(solution.x1+277137) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-4303940) > QE_PRECISION);
 
   
 #test test_154
     EquationResult solution = solve_equation(419,720305833,-744177550961586);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+2445401) > PRECISION); 
- fail_if(fabs(solution.x1-726294) > PRECISION);
+ fail_if(fabs(solution.x2+2445401) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-726294) > QE_PRECISION);
 
   
 #test test_155
     EquationResult solution = solve_equation(-385,-381205055,3123536949432900);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+3386123) > PRECISION); 
- fail_if(fabs(solution.x2-2395980) > PRECISION);
+ fail_if(fabs(solution.x1+3386123) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-2395980) > QE_PRECISION);
 
   
 #test test_156
     EquationResult solution = solve_equation(284,1377239256,932005951652512);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+4036406) > PRECISION); 
- fail_if(fabs(solution.x1+813028) > PRECISION);
+ fail_if(fabs(solution.x2+4036406) > QE_PRECISION); 
+ fail_if(fabs(solution.x1+813028) > QE_PRECISION);
 
   
 #test test_157
     EquationResult solution = solve_equation(-124,-538722464,-580120990870212);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+2373149) > PRECISION); 
- fail_if(fabs(solution.x2+1971387) > PRECISION);
+ fail_if(fabs(solution.x1+2373149) > QE_PRECISION); 
+ fail_if(fabs(solution.x2+1971387) > QE_PRECISION);
 
   
 #test test_158
     EquationResult solution = solve_equation(499,-9276410,-2577397049190425);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+2263415) > PRECISION); 
- fail_if(fabs(solution.x1-2282005) > PRECISION);
+ fail_if(fabs(solution.x2+2263415) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-2282005) > QE_PRECISION);
 
   
 #test test_159
     EquationResult solution = solve_equation(-419,-1360603197,3406868302421522);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+4904962) > PRECISION); 
- fail_if(fabs(solution.x2-1657699) > PRECISION);
+ fail_if(fabs(solution.x1+4904962) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-1657699) > QE_PRECISION);
 
   
 #test test_160
     EquationResult solution = solve_equation(-59,-111593308,147243798492276);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+2786906) > PRECISION); 
- fail_if(fabs(solution.x2-895494) > PRECISION);
+ fail_if(fabs(solution.x1+2786906) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-895494) > QE_PRECISION);
 
   
 #test test_161
     EquationResult solution = solve_equation(48,3836304,-428433958572384);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+3027821) > PRECISION); 
- fail_if(fabs(solution.x1-2947898) > PRECISION);
+ fail_if(fabs(solution.x2+3027821) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-2947898) > QE_PRECISION);
 
   
 #test test_162
     EquationResult solution = solve_equation(-84,-59519628,626128264467552);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+3107359) > PRECISION); 
- fail_if(fabs(solution.x2-2398792) > PRECISION);
+ fail_if(fabs(solution.x1+3107359) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-2398792) > QE_PRECISION);
 
   
 #test test_163
     EquationResult solution = solve_equation(-194,-667460880,-573068620826656);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+1793284) > PRECISION); 
- fail_if(fabs(solution.x2+1647236) > PRECISION);
+ fail_if(fabs(solution.x1+1793284) > QE_PRECISION); 
+ fail_if(fabs(solution.x2+1647236) > QE_PRECISION);
 
   
 #test test_164
     EquationResult solution = solve_equation(189,-875117628,603066976000839);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2-842381) > PRECISION); 
- fail_if(fabs(solution.x1-3787871) > PRECISION);
+ fail_if(fabs(solution.x2-842381) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-3787871) > QE_PRECISION);
 
   
 #test test_165
     EquationResult solution = solve_equation(-38,-20827838,8352406422000);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+817101) > PRECISION); 
- fail_if(fabs(solution.x2-269000) > PRECISION);
+ fail_if(fabs(solution.x1+817101) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-269000) > QE_PRECISION);
 
   
 #test test_166
     EquationResult solution = solve_equation(169,-567252387,382448696467968);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2-934251) > PRECISION); 
- fail_if(fabs(solution.x1-2422272) > PRECISION);
+ fail_if(fabs(solution.x2-934251) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-2422272) > QE_PRECISION);
 
   
 #test test_167
     EquationResult solution = solve_equation(-53,-25268333,1000021170936820);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+4588685) > PRECISION); 
- fail_if(fabs(solution.x2-4111924) > PRECISION);
+ fail_if(fabs(solution.x1+4588685) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-4111924) > QE_PRECISION);
 
   
 #test test_168
     EquationResult solution = solve_equation(232,-867658424,772682780178192);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2-1462281) > PRECISION); 
- fail_if(fabs(solution.x1-2277626) > PRECISION);
+ fail_if(fabs(solution.x2-1462281) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-2277626) > QE_PRECISION);
 
   
 #test test_169
     EquationResult solution = solve_equation(69,-35905047,-103846101451416);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+993896) > PRECISION); 
- fail_if(fabs(solution.x1-1514259) > PRECISION);
+ fail_if(fabs(solution.x2+993896) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-1514259) > QE_PRECISION);
 
   
 #test test_170
     EquationResult solution = solve_equation(-185,648410755,450759719339730);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+594379) > PRECISION); 
- fail_if(fabs(solution.x2-4099302) > PRECISION);
+ fail_if(fabs(solution.x1+594379) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-4099302) > QE_PRECISION);
 
   
 #test test_171
     EquationResult solution = solve_equation(-129,-492171120,-193886241619191);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+3369179) > PRECISION); 
- fail_if(fabs(solution.x2+446101) > PRECISION);
+ fail_if(fabs(solution.x1+3369179) > QE_PRECISION); 
+ fail_if(fabs(solution.x2+446101) > QE_PRECISION);
 
   
 #test test_172
     EquationResult solution = solve_equation(161,-982018051,1463150162884704);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2-2588163) > PRECISION); 
- fail_if(fabs(solution.x1-3511328) > PRECISION);
+ fail_if(fabs(solution.x2-2588163) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-3511328) > QE_PRECISION);
 
   
 #test test_173
     EquationResult solution = solve_equation(-467,-3170083329,-5311340043760774);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+3776914) > PRECISION); 
- fail_if(fabs(solution.x2+3011273) > PRECISION);
+ fail_if(fabs(solution.x1+3776914) > QE_PRECISION); 
+ fail_if(fabs(solution.x2+3011273) > QE_PRECISION);
 
   
 #test test_174
     EquationResult solution = solve_equation(27,96190308,-109602053776215);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+4470609) > PRECISION); 
- fail_if(fabs(solution.x1-908005) > PRECISION);
+ fail_if(fabs(solution.x2+4470609) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-908005) > QE_PRECISION);
 
   
 #test test_175
     EquationResult solution = solve_equation(-178,653158540,540481161618918);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+695619) > PRECISION); 
- fail_if(fabs(solution.x2-4365049) > PRECISION);
+ fail_if(fabs(solution.x1+695619) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-4365049) > QE_PRECISION);
 
   
 #test test_176
     EquationResult solution = solve_equation(111,268540857,-605853786193560);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+3840495) > PRECISION); 
- fail_if(fabs(solution.x1-1421208) > PRECISION);
+ fail_if(fabs(solution.x2+3840495) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-1421208) > QE_PRECISION);
 
   
 #test test_177
     EquationResult solution = solve_equation(-441,2114697753,-2506471329970062);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1-2142751) > PRECISION); 
- fail_if(fabs(solution.x2-2652482) > PRECISION);
+ fail_if(fabs(solution.x1-2142751) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-2652482) > QE_PRECISION);
 
   
 #test test_178
     EquationResult solution = solve_equation(-483,1773119565,-1598427103205772);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1-1591011) > PRECISION); 
- fail_if(fabs(solution.x2-2080044) > PRECISION);
+ fail_if(fabs(solution.x1-1591011) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-2080044) > QE_PRECISION);
 
   
 #test test_179
     EquationResult solution = solve_equation(-138,-763808886,-935785264360848);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+3704216) > PRECISION); 
- fail_if(fabs(solution.x2+1830631) > PRECISION);
+ fail_if(fabs(solution.x1+3704216) > QE_PRECISION); 
+ fail_if(fabs(solution.x2+1830631) > QE_PRECISION);
 
   
 #test test_180
     EquationResult solution = solve_equation(-236,1307204944,-1695048970954500);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1-2071125) > PRECISION); 
- fail_if(fabs(solution.x2-3467879) > PRECISION);
+ fail_if(fabs(solution.x1-2071125) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-3467879) > QE_PRECISION);
 
   
 #test test_181
     EquationResult solution = solve_equation(358,-2489631524,3871932864221136);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2-2347962) > PRECISION); 
- fail_if(fabs(solution.x1-4606316) > PRECISION);
+ fail_if(fabs(solution.x2-2347962) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-4606316) > QE_PRECISION);
 
   
 #test test_182
     EquationResult solution = solve_equation(-464,626846832,392302300190432);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+465463) > PRECISION); 
- fail_if(fabs(solution.x2-1816426) > PRECISION);
+ fail_if(fabs(solution.x1+465463) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-1816426) > QE_PRECISION);
 
   
 #test test_183
     EquationResult solution = solve_equation(135,-189957825,-1191078626098140);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+2348957) > PRECISION); 
- fail_if(fabs(solution.x1-3756052) > PRECISION);
+ fail_if(fabs(solution.x2+2348957) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-3756052) > QE_PRECISION);
 
   
 #test test_184
     EquationResult solution = solve_equation(-109,378455630,12169779474384);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+31864) > PRECISION); 
- fail_if(fabs(solution.x2-3503934) > PRECISION);
+ fail_if(fabs(solution.x1+31864) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-3503934) > QE_PRECISION);
 
   
 #test test_185
     EquationResult solution = solve_equation(-175,-397148325,709028410683600);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+3445371) > PRECISION); 
- fail_if(fabs(solution.x2-1175952) > PRECISION);
+ fail_if(fabs(solution.x1+3445371) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-1175952) > QE_PRECISION);
 
   
 #test test_186
     EquationResult solution = solve_equation(143,139774349,-1070088105988044);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+3267567) > PRECISION); 
- fail_if(fabs(solution.x1-2290124) > PRECISION);
+ fail_if(fabs(solution.x2+3267567) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-2290124) > QE_PRECISION);
 
   
 #test test_187
     EquationResult solution = solve_equation(134,-1116225494,2324226805240340);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2-4115831) > PRECISION); 
- fail_if(fabs(solution.x1-4214210) > PRECISION);
+ fail_if(fabs(solution.x2-4115831) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-4214210) > QE_PRECISION);
 
   
 #test test_188
     EquationResult solution = solve_equation(50,230029650,-26481471484500);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+4712970) > PRECISION); 
- fail_if(fabs(solution.x1-112377) > PRECISION);
+ fail_if(fabs(solution.x2+4712970) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-112377) > QE_PRECISION);
 
   
 #test test_189
     EquationResult solution = solve_equation(43,205832228,44779345290720);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+4558340) > PRECISION); 
- fail_if(fabs(solution.x1+228456) > PRECISION);
+ fail_if(fabs(solution.x2+4558340) > QE_PRECISION); 
+ fail_if(fabs(solution.x1+228456) > QE_PRECISION);
 
   
 #test test_190
     EquationResult solution = solve_equation(-332,-1413317360,-267227420896772);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+4058663) > PRECISION); 
- fail_if(fabs(solution.x2+198317) > PRECISION);
+ fail_if(fabs(solution.x1+4058663) > QE_PRECISION); 
+ fail_if(fabs(solution.x2+198317) > QE_PRECISION);
 
   
 #test test_191
     EquationResult solution = solve_equation(18,-166433796,384529439704050);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2-4518897) > PRECISION); 
- fail_if(fabs(solution.x1-4727425) > PRECISION);
+ fail_if(fabs(solution.x2-4518897) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-4727425) > QE_PRECISION);
 
   
 #test test_192
     EquationResult solution = solve_equation(-245,455487095,-103772642688050);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1-265841) > PRECISION); 
- fail_if(fabs(solution.x2-1593290) > PRECISION);
+ fail_if(fabs(solution.x1-265841) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-1593290) > QE_PRECISION);
 
   
 #test test_193
     EquationResult solution = solve_equation(52,-108516772,-167045828103440);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+1030495) > PRECISION); 
- fail_if(fabs(solution.x1-3117356) > PRECISION);
+ fail_if(fabs(solution.x2+1030495) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-3117356) > QE_PRECISION);
 
   
 #test test_194
     EquationResult solution = solve_equation(-157,778069549,-963998893295220);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1-2474877) > PRECISION); 
- fail_if(fabs(solution.x2-2480980) > PRECISION);
+ fail_if(fabs(solution.x1-2474877) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-2480980) > QE_PRECISION);
 
   
 #test test_195
     EquationResult solution = solve_equation(401,-1682176554,1086486869709360);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2-797490) > PRECISION); 
- fail_if(fabs(solution.x1-3397464) > PRECISION);
+ fail_if(fabs(solution.x2-797490) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-3397464) > QE_PRECISION);
 
   
 #test test_196
     EquationResult solution = solve_equation(479,301133888,-5544914841268791);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+3731181) > PRECISION); 
- fail_if(fabs(solution.x1-3102509) > PRECISION);
+ fail_if(fabs(solution.x2+3731181) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-3102509) > QE_PRECISION);
 
   
 #test test_197
     EquationResult solution = solve_equation(-271,1345872449,-1413636123103908);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1-1508628) > PRECISION); 
- fail_if(fabs(solution.x2-3457691) > PRECISION);
+ fail_if(fabs(solution.x1-1508628) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-3457691) > QE_PRECISION);
 
   
 #test test_198
     EquationResult solution = solve_equation(264,10632072,-921283858117392);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x2+1888322) > PRECISION); 
- fail_if(fabs(solution.x1-1848049) > PRECISION);
+ fail_if(fabs(solution.x2+1888322) > QE_PRECISION); 
+ fail_if(fabs(solution.x1-1848049) > QE_PRECISION);
 
   
 #test test_199
     EquationResult solution = solve_equation(-464,2224458688,-998668448399424);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1-501386) > PRECISION); 
- fail_if(fabs(solution.x2-4292706) > PRECISION);
+ fail_if(fabs(solution.x1-501386) > QE_PRECISION); 
+ fail_if(fabs(solution.x2-4292706) > QE_PRECISION);
 
   
 #test test_200
     EquationResult solution = solve_equation(-99,-731003031,-1209142706447412);
     ck_assert_int_eq(solution.number_of_roots ,2);
- fail_if(fabs(solution.x1+4882236) > PRECISION); 
- fail_if(fabs(solution.x2+2501633) > PRECISION);
+ fail_if(fabs(solution.x1+4882236) > QE_PRECISION); 
+ fail_if(fabs(solution.x2+2501633) > QE_PRECISION);
