@@ -74,10 +74,10 @@ clean:
 	@$(CLEAN) ./leaks.log
 
 tests: $(TEST_PROG)
+	-$(BUILD_DIR)/$<	
 
 $(TEST_PROG): clean $(LIB_FILE_NAME) testgen
 	$(CC) $(CFLAGS) $(TEST_DIR)/$(TEST_SOURCE) $(INCLUDES:%=-I %) -L./ -l$(LIB_NAME) $(CHECK_LIBS) -o $(BUILD_DIR)/$@
-	-$(BUILD_DIR)/$@	
 
 gcov_report: CFLAGS += --coverage
 gcov_report: CHECK_LIBS += -lgcov
@@ -94,7 +94,7 @@ show_coverage: gcov_report
 
 testgen: $(TEST_DIR)/*.check
 	$(CLEAN) $(TEST_DIR)/$(TEST_SOURCE)
-	checkmk clean_mode=1 $(TEST_DIR)/*.check > $(TEST_DIR)/$(TEST_SOURCE)
+	checkmk clean_mode=1 $(TEST_DIR)/includes.h $(TEST_DIR)/*.check > $(TEST_DIR)/$(TEST_SOURCE)
 
 check: cpplint cppcheck $(TEST_PROG)
 
@@ -109,10 +109,10 @@ leaks: clean $(TEST_PROG)
 
 valgrind: leaks
 
-docs: Doxyfile.conf $(SRC_DIR)/$(SOURCES) $(SRC_DIR)/$(HEADERS)
+docs: Doxyfile.conf $(SRC_DIR)/$(SOURCES) $(SRC_DIR)/$(HEADERS) README.md
 	doxygen Doxyfile.conf
 
-show_docs: docs README.md
+show_docs: docs 
 	open $(DOCS_DIR)/html/index.html
 
 .PHONY: testgen clean

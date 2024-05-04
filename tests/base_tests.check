@@ -1,20 +1,44 @@
-/* 
- * This is the test suite for the quadratic equation solver 
+/**
+ * @file base_tests.check
+ * @author Sergey Gorbatenko (sg41@mail.ru)
+ * @brief This is the test suite for the quadratic equation solver 
  * using check framework (https://libcheck.github.io/check/)
  */
 
-#include <check.h>
-#include <math.h>
-#include <stdio.h>
-#include <stdlib.h>
+#test edge_case_1_safe
+  int a = 0;
+  int b = 2;
+  int c = 3;
+  
+  EquationResult result = solve_equation_safe(a, b, c);
+  
+  ck_assert_int_eq(result.number_of_roots, 1);
+  fail_if(fabs(result.x1 - result.x2) > PRECISION);
+  fail_if(fabs(result.x1 + c/b) > PRECISION);
 
-#include "quadratic_equation.h"
+#test edge_case_2_safe
+  int a = 0;
+  int b = 0;
+  int c = 3;
+  
+  EquationResult result = solve_equation_safe(a, b, c);
+  
+  ck_assert_int_eq(result.number_of_roots, 0);
+  ck_assert_double_nan(result.x1);
+  ck_assert_double_nan(result.x2);
 
-/* 
- * Precision for the test cases, provided by current version 
- * of equation solver library
- */
-#define PRECISION 1e-7
+
+
+#test edge_case_3_safe
+  double a = 1.0;
+  double b = 2.0;
+  double c = 1.0;
+  
+  EquationResult result = solve_equation_safe(a, b, c);
+  
+  ck_assert_int_eq(result.number_of_roots, 1);
+  fail_if(fabs(result.x1 - result.x2) > PRECISION);
+  fail_if(fabs(result.x1 + 1) > PRECISION);
 
 #test edge_case_1
   double a = 1.0;

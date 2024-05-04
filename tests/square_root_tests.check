@@ -1,0 +1,45 @@
+/**
+ * @file square_root_tests.check
+ * @author Sergey Gorbatenko (sg41@mail.ru)
+ * @brief This is the test suite for the square root function.
+ * @version 0.1
+ * @date 2024-05-04
+ *
+ * @copyright Copyright (c) 2024
+ *
+ */
+
+#test test_square_root_1
+  double x = 1.0;
+  double y = square_root(x);
+  fail_if(fabs(y - 1.0) > PRECISION);
+
+#test test_square_root_2
+  double x = 2.0;
+  double y = square_root(x);
+  fail_if(fabs(y - 1.4142135623730951) > PRECISION);
+
+#test test_square_root_3
+  double x = 3.0;
+  double y = square_root(x);
+  fail_if(fabs(y - 1.7320508075688772) > PRECISION);
+
+#test test_square_root_4
+  double x = 4.0;
+  double y = square_root(x);
+  fail_if(fabs(y - 2.0) > PRECISION);
+
+#test test_square_root_5
+  srand(time(NULL));   // Initialization, should only be called once.
+  for(int i = 0; i < 1000; i++){
+    double x = rand() ;
+    double y = square_root(x);
+    fail_if(fabs(y - sqrt(x)) > PRECISION);
+  }
+
+#test test_square_root_6
+  double x = -1.0;
+  double y = square_root(x);
+  ck_assert_double_nan(y);
+
+  
