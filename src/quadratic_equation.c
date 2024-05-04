@@ -21,8 +21,8 @@
  * if it is.
  */
 EquationResult solve_equation(double a, double b, double c) {
-  EquationResult result = {
-      0, NAN, NAN}; /* Result of the equation solver = no roots by default */
+  /* Result of the equation solver = no roots by default */
+  EquationResult result = {0, NAN, NAN};
 
   /* Check if the equation is linear. */
   if (a == 0) {
